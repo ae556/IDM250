@@ -3,7 +3,7 @@
 <?php wp_footer(); ?>
 </body>
 
- 
+
 <section class="footer">
 
     <p>Teach Empower Advocate Learn</p>

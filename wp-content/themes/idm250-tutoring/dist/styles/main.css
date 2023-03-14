@@ -131,3 +131,6 @@ h1 {
   .justify-space-around {
     justify-content: space-around;
   }
+  .content-blocks{
+    min-height: 80%;
+  }

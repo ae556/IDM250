@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions and definitions
  *
@@ -36,21 +37,21 @@ function theme_scripts_and_styles()
         'all' // media
     );
 
-    wp_enqueue_script(
-        'tailwind', // name of the script
-        'https://cdn.tailwindcss.com',
-        [], // dependencies
-        null, // version number
-        false // load in footer
-    );
+    // wp_enqueue_script(
+    //     'tailwind', // name of the script
+    //     'https://cdn.tailwindcss.com',
+    //     [], // dependencies
+    //     null, // version number
+    //     false // load in footer
+    // );
     // Enable first-party plugins, like forms and typography, using the plugins query parameter.
-    wp_enqueue_script(
-        'tailwind-plugins', // name of the script
-        'https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"',
-        [], // dependencies
-        null, // version number
-        false // load in footer
-    );
+    // wp_enqueue_script(
+    //     'tailwind-plugins', // name of the script
+    //     'https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"',
+    //     [], // dependencies
+    //     null, // version number
+    //     false // load in footer
+    // );
     wp_enqueue_script(
         'idm250-scripts', // name of the script
         get_template_directory_uri() . '/dist/scripts/main.js', // http://localhost:250/wp-content/themes/idm250-theme-02/dist/scripts/main.js
@@ -58,6 +59,11 @@ function theme_scripts_and_styles()
         filemtime(get_template_directory() . '/dist/scripts/main.js'), // version number
         true // load in footer
     );
+
+
+    wp_enqueue_style("bootstrap-css", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+    wp_enqueue_script("bootstrap-js", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js");
+    
 }
 add_action('wp_enqueue_scripts', 'theme_scripts_and_styles');
 
@@ -167,3 +173,12 @@ function register_custom_post_types()
 }
 
 add_action('init', 'register_custom_post_types');
+
+
+function my_custom_404_page()
+{
+    status_header(404);
+    include '404.php';
+    exit;
+}
+add_action('template_redirect', 'my_custom_404_page');

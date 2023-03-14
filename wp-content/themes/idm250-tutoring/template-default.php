@@ -12,14 +12,14 @@
     <h1 class=""><?php the_title(); ?>
     </h1>
 
-     
 
 
 
 
-      <?php the_content(); ?>
-      <!-- end content -->
-    </div>
+
+    <?php the_content(); ?>
+    <!-- end content -->
+  </div>
   </div>
 <?php endwhile; ?>
 

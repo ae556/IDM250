@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
 		<p>&copy; <?php echo date("Y"); ?> TEAL Education</p>
 	</footer>
 </body>
+
 </html>
 
 <?php get_footer(); ?>
@@ -32,11 +34,9 @@ $currentPostId = get_the_ID();
 
 $terms = get_the_terms($currentPostId, 'category');
 
-if($terms) {
-    foreach($terms as $term){
+if ($terms) {
+	foreach ($terms as $term) {
 
-        echo "<span>{$term->name},</span>";
-
-    }
-
+		echo "<span>{$term->name},</span>";
+	}
 }
