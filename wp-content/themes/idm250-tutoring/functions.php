@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Functions and definitions
  *
@@ -155,18 +154,17 @@ function register_custom_post_types()
 {
     $arg = [
         'labels' => [
-            'name' => 'Projects',
-            'singular_name' => 'Project',
+            'name' => 'Services',
+            'singular_name' => 'Service',
         ],
         'public' => true,
         'has_archive' => true,
-        'rewrite' => ['slug' => 'projects'],
+        'rewrite' => ['slug' => 'services'],
         'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
         'menu_position' => 5,
-        'taxonomies' => ['project-categories'], // Name of custom taxonomy. Only need if you have a custom taxonomy
         'show_in_rest' => true,
     ];
-    $post_type_name = 'projects';
+    $post_type_name = 'services';
 
     // Register Albums post type
     register_post_type($post_type_name, $arg);
@@ -174,11 +172,13 @@ function register_custom_post_types()
 
 add_action('init', 'register_custom_post_types');
 
+/*
+function() {
+    var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+    request = true;
+    b[c] = b[c].replace( rcs, ' ' );
+    b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+}();
+*/
 
-function my_custom_404_page()
-{
-    status_header(404);
-    include '404.php';
-    exit;
-}
-add_action('template_redirect', 'my_custom_404_page');
+
