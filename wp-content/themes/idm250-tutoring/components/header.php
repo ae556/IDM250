@@ -17,12 +17,13 @@ $menu = get_theme_menu('primary-menu');
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <!-- show the menu items as link elements -->
                     <?php foreach ($menu as $item) {
                         // echo "<a href='{$item->url}' class=''>{$item->title}</a>";
                         echo "<li class='nav-item'><a class='nav-link active' aria-current='page' href='{$item->url}'>{$item->title}</a></li>";
                     }  ?>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='/doesnotexist'>404</a></li>
 
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

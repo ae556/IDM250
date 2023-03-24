@@ -134,3 +134,11 @@ h1 {
   .content-blocks{
     min-height: 80%;
   }
+
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-weight: bold;
+  }
